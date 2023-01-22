@@ -1,0 +1,381 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none
+}
+
+ul {
+    list-style: none
+}
+
+:focus {
+    outline: none;
+}
+
+.btn {
+    width: 7em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+    border: 1px solid rgba(0, 0, 0, .2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .4);
+    border-radius:0.5em;
+    cursor: pointer;
+    transition: .3s all;
+    outline: 0
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 13vh;
+    padding: 0 10em;
+    background-color:#FAFAFA;
+}
+
+.header__links {
+    display: flex;
+    align-items: center
+}
+
+.header__link {
+    position: relative;
+    margin-right: 3em;
+    padding: 0.8em 1.5em;
+    font-weight: 700;
+    font-size: 1.3em;
+    color: #303030;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+    border-radius: 0.5em;
+    transition: .3s all
+}
+
+.main {
+    min-height: 87vh;
+    background-image: linear-gradient(to right, rgba(228,214,208), rgba(254,238,222), rgba(221,221,221));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.main__entry {
+    font-size: 1.5em;
+    padding: 2em;
+    text-align: center;
+}
+.main__content {
+    flex-direction: column;
+}
+
+/*----------FORM STYLES--------*/
+.login__form li,  .registration__form li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+}
+.login__form li label,  .registration__form li label {
+    width: 12em;
+}
+.main__form {
+    width: 35em;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 20%);
+    border-radius: 1em;
+    padding:1em 1em;
+    margin-bottom:8em;
+}
+.main__form input {
+    width: 22em;    
+    border: none;
+    box-shadow: inset 0 10px 15px #eee, 0 0 3px #ccc;
+    border-radius: 1em;
+    padding: 1em 1.5em;
+    transition: .5s;
+    background-color:#FAFAFA;
+}
+.main__form input:required {
+    background: #fff url(img/icons8-asterisk-12.png) no-repeat 96% 50%;
+}
+
+.main__form input:focus {  
+    border: 1px solid; 
+    padding: 1.1em 1.6em;
+}
+.main__form input:focus:invalid {
+    background: #fff url(img/icons8-exclamation-mark-12.png) no-repeat 96% 50%;
+    box-shadow: 0 0 5px #d45252;
+    border-color: #b03535;
+}
+.main__form input:valid {
+	background:#fff url(img/icons8-checkmark-12.png) no-repeat 96% 50%;
+	box-shadow: 0 0 5px #5cd053;
+	border-color:#28921f;
+}
+
+.main__form .btn:hover {
+	cursor:pointer;
+	opacity:80%;
+}
+:root {
+    --pseudo-text: "";
+    }
+.registration__form li:nth-of-type(4) label {
+    position: relative;
+}
+.registration__form li:nth-of-type(4) label::after {
+    content: var(--pseudo-text);
+    position: absolute;
+    top: 1px;
+    right: -414px;
+    color: red;
+    font-size: 0.9em;
+    transition: 0.5s;
+}
+
+/*------DIAGRAMS STYLES --------------*/
+.main .diagrams__wrapper {
+    width: 45em;
+    padding: 3em;
+    display: flex;
+    align-items: center;
+    gap: 7em;
+}
+.diagrams__prev {
+    display:none;
+}
+.diagrams__next {
+    display:none;
+}
+.main .diagrams {
+    display: flex;
+    justify-content: center;
+    margin-right: 7em;
+}
+
+/*------TRANSACTIONS STYLES ----------*/
+
+.main .main__content .transactions {
+    display: grid;
+    gap: 2px;
+    place-items: center;
+    width: 70em;
+    background-color: #ddd; 
+    border: 2px solid #fff;
+    border-radius: 1em;;
+
+}
+.main .main__content .transactions > div:nth-child(odd) {
+    background-color: #D1CECC;
+}
+
+.main .main__content .transactions > div:nth-child(-n + 1) {
+    background-color: #ECEAE9;
+}
+  
+.main .main__content .transactions__headings , .main .main__content .transactions__row {
+    display: grid;
+    grid-template-columns: 1fr 20% 40% 1fr 1fr;
+    align-items: center;
+    justify-items: start;
+    gap: 1em;
+    width: 100%;
+    padding: 1em 1em;
+    font-size: 1.2em;
+
+}
+.main .main__content .transactions__row:last-of-type {
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+}
+.main .main__content .transactions__headings {
+    grid-row: 1/2;
+    padding: 1.2em 1.2em 1.2em 1.2em;
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+}
+.main .main__content .transactions__row .name {
+    font-size: 0.6em;
+}
+.main .main__content .transactions__row .icon {
+    margin: auto;
+}
+hr {
+    grid-row: 2/3;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+
+/*-------MEDIA QUERIES FOR RESPONSIVENESS--------*/
+
+@media screen and (min-width: 1441px) {
+    .main .main__content .transactions {
+        width: 90em;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .main .main__content .transactions {
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        font-size: 0.7em;
+        padding: 0 3em;
+    }
+    .main__form {
+        width: 24em;
+        padding: 0;
+    }
+    .main__entry {
+        padding: 1em;
+        font-size: 1em;
+    }
+    .login__form li label, .registration__form li label {
+        width: 8em;
+    }
+    .main__form input {
+        width: 15em;
+        padding: 0.6em 1em;
+    }
+    .transactions__row .date, .transactions__row .balance {
+        display: none;
+    }
+    .transactions__row .showFullLine {
+        display: block;
+    }
+    .main {
+        min-height: 88vh;
+    }
+    .main__content {
+        font-size: 0.8em;
+    }
+    #mobile_style {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .main .main__content .transactions__headings {
+        width: 100%;
+        font-size: 0.9em;
+        grid-template-columns: 8% 24% 32% 23% 3%;
+        padding: 1em 1em 1em 1.5em;
+    }
+    .main .main__content .transactions__headings h2:first-of-type, .main .main__content .transactions__headings h2:nth-of-type(5){
+        visibility: hidden;
+    }
+    .main .main__content .transactions__row {
+        width: 100%;
+        padding: 1em;
+        grid-template-columns: 13% 20% 37% 1fr 1fr;
+    }
+    .main .main__content .transactions .transactions__row:hover {
+        background-color:#E3C4BA;
+    }
+    #removeMobileStyle {
+        grid-template-columns: 15% 19% 37% 1fr 1fr;
+    }
+    .main__content .diagrams {
+        overflow: hidden;
+        width:500px;
+        position: relative;
+        margin: auto;
+        display: block;
+    }
+    .main .diagrams__wrapper {
+        width: 400%;
+        display: flex;
+        transform: translateX(-0px);
+    }
+    .main .chartWrapper {
+        width: 100%;
+        height: 25em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .diagrams__prev {
+        display:block;
+        position: absolute;
+        top: 8%;
+        cursor: pointer;
+    }
+    .diagrams__next {
+        display:block;
+        position: absolute;
+        top: 8%;
+        right: 0;
+        cursor: pointer;
+    }
+
+}
+@media screen and (max-width: 425px) {
+    .header{
+        font-size: 0.6em;
+        padding: 0 1em;
+    }
+    .header__link {
+        font-size: 1.2em;
+    }
+    .main .main__form {
+        font-size: 0.9em;
+        width: 19em;
+    }
+    .login__form li label, .registration__form li label {
+        font-size: 0.8em;
+        width: 7em;
+        gap: 3px;
+    }
+    .main__form input {
+        font-size: 0.8em;
+        width: 14.5em;
+        padding: 0.4em 0.8em;
+    }
+    .main__form input:focus {  
+        padding: 0.5em 0.9em;
+    }
+    .main__form #register_email::placeholder {
+        font-size:0.7em;
+    }
+    .btn {
+        height: 2em;
+        font-size: 0.8em;
+    }
+    .main .main__content .transactions {
+        font-size: 0.8em;
+    }
+    .main .main__content .transactions__row {
+        grid-template-columns: 18% 1fr 30% 1fr 1fr;
+    }
+    .main .main__content .transactions__headings {
+        font-size: 0.8em;
+    }
+    #removeMobileStyle {
+        grid-template-columns: 15% 24% 26% 1fr 1fr;
+    }
+    .main__content .diagrams {
+        width: 300px;
+        padding: 2em 0;
+    }
+    .main .diagrams__wrapper {
+        padding: 0;
+        gap: 0;
+    }
+    .main .chartWrapper {
+        height: 14em;
+    }
+    
+}
+

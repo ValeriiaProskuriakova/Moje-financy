@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje financy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+   
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+</head>
+<body>
+
+        <header class="header">
+            <nav class="header__links">
+                <a href="#login" id="login_button" class="header__link">Logowanie</a>
+                <a href="#registration" id="register_button" class="header__link">Rejestracja</a>
+                <a href="#login" id="logout_button" class="header__link">Wyloguj</a>
+            </nav>
+            <div class="header__logo">
+                <a href="#"><img src="img/icons8-money-box-48.png" style="width:3.5em;height:3.5em" alt="Logo"></a>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="main__form">
+                <div class="main__entry">
+                    Cześć! <br> To jest aplikacja Moje finanse. Zaloguj się, aby zobaczyć swoją historię lub utwórz konto, jeśli go nie masz!
+                </div>
+                <div class="login__form">
+                    <form id="login_form">
+                        <ul>
+                            <li>
+                                <label for="name">Nazwa użytkownika / Email</label>
+                                <input type="text" name="name" id="login_username" oninvalid="this.setCustomValidity('Wpisz nazwę użytkownika lub email')" oninput="setCustomValidity('')" required>
+                            </li>
+                            <li>
+                                <label for="password">Hasło</label>
+                                <input type="text" name="name" id="login_password" oninvalid="this.setCustomValidity('Wpisz hasło')" oninput="setCustomValidity('')" required>
+                            </li>
+                            <li>
+                                <button type="submit" class="btn">Załoguj</button>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <div class="registration__form">
+                    <form id="registration_form">
+                        <ul>
+                            <li>
+                                <label for="name">Nazwa użytkownika</label>
+                                <input type="text" name="name" id="register_name" pattern="[0-9a-zA-Z]{6,16}" title="Musi mieć między 6 a 16 znaków,
+                                dozwolone znaki to litery i cyfry" oninvalid="this.setCustomValidity('Wpisz nazwę użytkownika ktora ma między 6 a 16 znaków, dozwolone znaki to litery i cyfry')" oninput="setCustomValidity('')" required>
+                            </li>
+                            <li>
+                                <label for="password">Hasło</label>
+                                <input type="text" name="password" id="register_password" pattern=".{6,}" title="Co najmniej 6 znaków" oninvalid="this.setCustomValidity('Wpisz hasło, ktore zawiera co najmniej 6 znaków')" oninput="setCustomValidity('')" required>
+                            </li>
+                            <li>
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="register_email" title="Wpisz poprawny format email" placeholder="john_doe@example.com" oninvalid="this.setCustomValidity('Wpisz poprawny format email')" oninput="setCustomValidity('');confirmEmail()" required>
+                            </li>
+                            <li>
+                                <label for="email_confirm">Potwierdź email</label>
+                                <input type="email" name="email_confirm" id="email_confirm" title="Powtórz email" class="email__confirm" oninvalid="this.setCustomValidity('Potwierdź email')" oninput="confirmEmail();setCustomValidity('')" required>
+                            </li>
+                            <li>
+                                <button type="submit" class="btn">Zarejestruj</button>
+                            </li>
+                        </ul>     
+                    </form>
+                </div>
+            </div>
+            <div class="main__content">
+
+                <div class="diagrams">
+                        <div class="diagrams__wrapper">
+                            <div class="chartWrapper"><canvas id="pieChart"></canvas></div>
+                            <div class="chartWrapper"><canvas id="barChart"></canvas></div>
+                        </div>
+                        <div class="diagrams__prev">
+                            <img src="./img/icons8-back-to-100.png" alt="prev" width="30">
+                        </div>
+                        <div class="diagrams__next">
+                            <img src="./img/icons8-next-page-100.png" alt="prev" width="30">
+                        </div>
+                </div>
+                <div class="transactions">
+                    <div class="transactions__headings " >
+                        <h2>Data</h2>
+                        <h2>Typ transakcji</h2>
+                        <h2>Opis</h2>
+                        <h2>Kwota</h2>
+                        <h2>Saldo</h2>                    
+                    </div> 
+                    <hr>                     
+                </div>
+            </div>
+        </main>
+        <script src="script.js"></script>
+</body>
+</html>
